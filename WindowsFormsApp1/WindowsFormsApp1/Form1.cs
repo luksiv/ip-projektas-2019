@@ -114,6 +114,7 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
+			double averageAccurasy = 0;
             List<Glass> glasses = new List<Glass>();
             if (radioButton1.Checked)
             {
@@ -126,7 +127,7 @@ namespace WindowsFormsApp1
             int testingFileCount = glasses.Count / NUMBER_OF_SEGMENTS;
             for (int segment = 0; segment < NUMBER_OF_SEGMENTS; segment++)
             {
-                richTextBox1.AppendText(String.Format("Kryžminė patikra nr {0} \n ", segment + 1));
+                richTextBox1.AppendText(String.Format("crosscheck segment {0} \n ", segment + 1));
                 int correctGuesses = 0;
                 int guessCounter = 0;               
                 int testingDataFromIndex = segment * testingFileCount;
@@ -155,9 +156,12 @@ namespace WindowsFormsApp1
                     guessCounter++;
                 }
                 double accuracy = Math.Round(((double)correctGuesses / guessCounter) * 100, 2);
+				averageAccurasy += accuracy;
                 richTextBox1.AppendText(string.Format("Correct guesses: {0, 3} ; Total guesses: {1, 3} ; Accuracy: {2, 4}%\n", correctGuesses, guessCounter, accuracy));
-            }               
-            button5.Enabled = true;
+            }
+			richTextBox1.AppendText(string.Format("Average accurasy of all segments - {0}%\n", averageAccurasy / NUMBER_OF_SEGMENTS));
+
+			button5.Enabled = true;
             button4.Enabled = true;
         }
 
@@ -248,11 +252,8 @@ namespace WindowsFormsApp1
 
         private void Knn_start_Click(object sender, EventArgs e)
         {
-            int correctGuesses = 0;
-            int guessCounter = 0;
-            int falseGuesses = 0;
-            
-            List<Glass> glasses = new List<Glass>();
+			double averageAccurasy = 0;
+			List<Glass> glasses = new List<Glass>();
             if (radioButton1.Checked)
             {
                 glasses = dataList;
@@ -261,27 +262,43 @@ namespace WindowsFormsApp1
             {
                 glasses = clearDistantValuesFromList(dataList);
             }
-            int trainingDataCount = (int)Math.Floor(glasses.Count * 0.8);
-            List<Glass> trainingData = glasses.GetRange(0, trainingDataCount);
-            List<Glass> testingData = glasses.GetRange(trainingDataCount, glasses.Count - trainingDataCount);
-            var knn = new KNearestNeighbor(7, trainingData);
-            foreach (Glass item in testingData)
-            {
-                var ans = knn.classify(item);
-                guessCounter++;
-                if (ans == item.group_type) correctGuesses++;
-                else falseGuesses++;
-            }
-            var totalGlasses = glasses.Count;
-            var totalTrain = trainingData.Count;
-            var totalTest = testingData.Count;
-            double trainProc = Math.Round(((double)totalTrain / totalGlasses) * 100, 2);
-            double testProc = Math.Round(((double)totalTest / totalGlasses) * 100, 2);
-            double accuracy = Math.Round(((double)correctGuesses / guessCounter) * 100, 2);
+			int testingFileCount = glasses.Count / NUMBER_OF_SEGMENTS;
+			for (int segment = 0; segment < NUMBER_OF_SEGMENTS; segment++)
+			{
+				richTextBox1.AppendText(String.Format("Crosscheck segment {0} \n ", segment + 1));
+				int correctGuesses = 0;
+				int guessCounter = 0;
+				int falseGuesses = 0;
+				int testingDataFromIndex = segment * testingFileCount;
+				int testingDataToIndex = (segment + 1) * testingFileCount;
+				var trainingData = new List<Glass>();
+				var testingData = new List<Glass>();
+				for (int i = 0; i < glasses.Count; i++)
+				{
+					if (i >= testingDataFromIndex && i <= testingDataToIndex) testingData.Add(glasses[i]);
+					else trainingData.Add(glasses[i]);
+				}
+				var knn = new KNearestNeighbor(7, trainingData);
+				foreach (Glass item in testingData)
+				{
+					var ans = knn.classify(item);
+					guessCounter++;
+					if (ans == item.group_type) correctGuesses++;
+					else falseGuesses++;
+				}
+				var totalGlasses = glasses.Count;
+				var totalTrain = trainingData.Count;
+				var totalTest = testingData.Count;
+				double trainProc = Math.Round(((double)totalTrain / totalGlasses) * 100, 2);
+				double testProc = Math.Round(((double)totalTest / totalGlasses) * 100, 2);
+				double accuracy = Math.Round(((double)correctGuesses / guessCounter) * 100, 2);
+				averageAccurasy += accuracy;
 
-            richTextBox1.AppendText(string.Format("Total: {0, 3}; Training: {1, 3}({2, 4}%); Testing: {3, 3}({4, 4}%)\n", totalGlasses, totalTrain, trainProc, totalTest, testProc));
-            richTextBox1.AppendText(string.Format("Correct guesses: {0, 3} ; Total guesses: {1, 3} ; Accuracy: {2, 4}%\n", correctGuesses, guessCounter, accuracy));
-        }
+				richTextBox1.AppendText(string.Format("Total: {0, 3}; Training: {1, 3}({2, 4}%); Testing: {3, 3}({4, 4}%)\n", totalGlasses, totalTrain, trainProc, totalTest, testProc));
+				richTextBox1.AppendText(string.Format("Correct guesses: {0, 3} ; Total guesses: {1, 3} ; Accuracy: {2, 4}%\n", correctGuesses, guessCounter, accuracy));
+			}
+				richTextBox1.AppendText(string.Format("Average accurasy of all segments - {0}%\n", averageAccurasy / NUMBER_OF_SEGMENTS));
+		}
 
         private void output(Object obj)
         {
