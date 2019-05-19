@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="kNN\KNearestNeighbor.cs" />
     <Compile Include="Network\NetworkLayer.cs" />
     <Compile Include="Network\NeuralNetwork.cs" />
     <Compile Include="Network\Neuron.cs" />

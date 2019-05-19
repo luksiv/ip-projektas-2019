@@ -17,8 +17,8 @@ namespace WindowsFormsApp1.Network
         public NeuralNetwork()
         {
             NetworkLayers = new List<NetworkLayer>();
-            epoch = 500;
-            LearningRate = 0.001;
+            epoch = 2000;
+            LearningRate = 0.0005;
         }
 
         public NeuralNetwork(int epochos, double learning_Rate)
@@ -51,14 +51,14 @@ namespace WindowsFormsApp1.Network
                 //newWeights = new List<double>();
                 for (int j = 0; j < Inputs.Count; j++)
                 {
-                    this.SetNeuralNetworkInputValues(Inputs[j]);
+                    //this.SetNeuralNetworkInputValues(Inputs[j]);
                     List<double> outputs = GetOutputs(Inputs[j]);
                     totalError += CalculateTotalError(outputs, Inputs[j]);
                     CalculateNewWeigths(outputs, ConvertGroupToOutputVector(Inputs[j].group_type));
                     UpdateAllSynapses();
                 }
                 //UpdateAllSynapsesByAverage();               
-                Console.WriteLine(totalError);
+                Console.WriteLine(string.Format("Epoch: {0, 4}; MSE: {1, 4}", i+1, totalError));
                 totalError = 0;
             }
         }
