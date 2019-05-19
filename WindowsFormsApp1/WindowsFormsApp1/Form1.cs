@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
     {
         NeuralNetwork network;
         List<Glass> dataList;
+		public const int NUMBER_OF_SEGMENTS = 3;
+
         public Form1()
         {
             InitializeComponent();
@@ -113,33 +115,43 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            List<Glass> glasses = new List<Glass>();
-            if (radioButton1.Checked)
-            {
-                glasses = dataList;
-            }
-            else if (radioButton2.Checked)
-            {
-                //glasses = dataList.ClearNoise();
-            }
-            else
-            {
-                //glasses = dataList.ClearDistant();
-            }
-            network.Shuffle(glasses);
-            network.Train(glasses.GetRange(0, 200));
-            for (int i = 200; i < glasses.Count; i++)
-            {
-                Glass gl = glasses[i];
-                List<double> outPuts = network.GetOutputs(gl);
-                richTextBox1.AppendText("[");
-                foreach (var output in outPuts)
-                {
-                    richTextBox1.AppendText(String.Format("{0}; ", output));
-                }
-                richTextBox1.AppendText("]\n");
-                richTextBox1.AppendText(String.Format("Tikroji: {0}; Did:{1}\n", gl.group_type, outPuts.IndexOf(outPuts.Max())));
-            }
+			int testingFileCount = dataList.Count / NUMBER_OF_SEGMENTS;
+			for (int segment = 0; segment < NUMBER_OF_SEGMENTS; segment++)
+			{
+				richTextBox1.AppendText(String.Format("Kryžminė patikra nr {0} \n ", segment + 1));
+				List<Glass> glasses = new List<Glass>();
+				if (radioButton1.Checked)
+				{
+					glasses = dataList;
+				}
+				else if (radioButton2.Checked)
+				{
+					//glasses = dataList.ClearNoise();
+				}
+				else
+				{
+					//glasses = dataList.ClearDistant();
+				}
+				int trainingFileFrom = segment * testingFileCount;
+				int trainingFileTo = (segment + 1) * testingFileCount;
+				//network.Shuffle(glasses);
+				network.Train(glasses.GetRange(trainingFileFrom, (trainingFileTo - trainingFileFrom -1)));
+				for (int i = 0; i < glasses.Count; i++)
+				{
+					if (!(trainingFileFrom < i && i < trainingFileTo))
+					{
+						Glass gl = glasses[i];
+						List<double> outPuts = network.GetOutputs(gl);
+						richTextBox1.AppendText("[");
+						foreach (var output in outPuts)
+						{
+							richTextBox1.AppendText(String.Format("{0}; ", output));
+						}
+						richTextBox1.AppendText("]\n");
+						richTextBox1.AppendText(String.Format("Tikroji: {0}; Did:{1}\n", gl.group_type, outPuts.IndexOf(outPuts.Max())));
+					}
+				}
+			}
             button5.Enabled = true;
             button4.Enabled = true;
         }
