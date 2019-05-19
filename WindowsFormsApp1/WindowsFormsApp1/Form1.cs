@@ -17,6 +17,8 @@ namespace WindowsFormsApp1
     {
         NeuralNetwork network;
         List<Glass> dataList;
+		public const int NUMBER_OF_SEGMENTS = 5;
+
         public Form1()
         {
             InitializeComponent();
@@ -112,9 +114,6 @@ namespace WindowsFormsApp1
 
         private void button6_Click(object sender, EventArgs e)
         {
-            int correctGuesses = 0;
-            int guessCounter = 0;
-            richTextBox1.AppendText("Starting learning...\n");
             List<Glass> glasses = new List<Glass>();
             if (radioButton1.Checked)
             {
@@ -124,32 +123,40 @@ namespace WindowsFormsApp1
             {
                 glasses = clearDistantValuesFromList(dataList);
             }
-            int testData = (int) Math.Floor(glasses.Count * 0.9);
-            network.Shuffle(glasses);
-            network.Train(glasses.GetRange(0, testData));
-            for (int i = testData; i < glasses.Count; i++)
+            int testingFileCount = glasses.Count / NUMBER_OF_SEGMENTS;
+            for (int segment = 0; segment < NUMBER_OF_SEGMENTS; segment++)
             {
-                Glass gl = glasses[i];
-                List<double> outPuts = network.GetOutputs(gl);
-                richTextBox1.AppendText("[");
-                foreach (var output in outPuts)
+                richTextBox1.AppendText(String.Format("Kryžminė patikra nr {0} \n ", segment + 1));
+                int correctGuesses = 0;
+                int guessCounter = 0;               
+                int testingDataFromIndex = segment * testingFileCount;
+                int testingDataToIndex = (segment + 1) * testingFileCount;
+                var trainingData = new List<Glass>();
+                var testingData = new List<Glass>();
+                for (int i = 0; i < glasses.Count; i++)
                 {
-                    richTextBox1.AppendText(String.Format("{0}; ", output));
+                    if (i >= testingDataFromIndex && i <= testingDataToIndex) testingData.Add(glasses[i]);
+                    else trainingData.Add(glasses[i]);
                 }
-                richTextBox1.AppendText("]\n");
-                richTextBox1.AppendText(String.Format("Tikroji: {0}; Did:{1}\n", gl.group_type, outPuts.IndexOf(outPuts.Max())+1));
-                if (gl.group_type == outPuts.IndexOf(outPuts.Max()) + 1) correctGuesses++;
-                guessCounter++;
-            }
-            var totalGlasses = glasses.Count;
-            var totalTrain = testData;
-            var totalTest = totalGlasses - testData;         
-            double trainProc =  Math.Round(((double) totalTrain     / totalGlasses)*100, 2);
-            double testProc =   Math.Round(((double) totalTest      / totalGlasses)*100, 2);
-            double accuracy =   Math.Round(((double) correctGuesses / guessCounter)*100, 2);
-
-            richTextBox1.AppendText(string.Format("Total: {0, 3}; Training: {1, 3}({2, 4}%); Testing: {3, 3}({4, 4}%)\n", totalGlasses, totalTrain, trainProc, totalTest, testProc));
-            richTextBox1.AppendText(string.Format("Correct guesses: {0, 3} ; Total guesses: {1, 3} ; Accuracy: {2, 4}%\n", correctGuesses, guessCounter, accuracy));
+                
+                output(string.Format("TRAIN: {0, 3}; TEST: {1, 3}", trainingData.Count, testingData.Count));
+                network.Train(trainingData);
+                foreach (Glass gl in testingData)
+                {
+                    List<double> outPuts = network.GetOutputs(gl);
+                    //richTextBox1.AppendText("[");
+                    //foreach (var output in outPuts)
+                    //{
+                    //    richTextBox1.AppendText(String.Format("{0}; ", output));
+                    //}
+                    //richTextBox1.AppendText("]\n");
+                    //richTextBox1.AppendText(String.Format("Tikroji: {0}; Did:{1}\n", gl.group_type, outPuts.IndexOf(outPuts.Max()) + 1));
+                    if (gl.group_type == outPuts.IndexOf(outPuts.Max()) + 1) correctGuesses++;
+                    guessCounter++;
+                }
+                double accuracy = Math.Round(((double)correctGuesses / guessCounter) * 100, 2);
+                richTextBox1.AppendText(string.Format("Correct guesses: {0, 3} ; Total guesses: {1, 3} ; Accuracy: {2, 4}%\n", correctGuesses, guessCounter, accuracy));
+            }               
             button5.Enabled = true;
             button4.Enabled = true;
         }

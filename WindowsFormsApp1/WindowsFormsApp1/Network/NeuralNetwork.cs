@@ -17,7 +17,7 @@ namespace WindowsFormsApp1.Network
         public NeuralNetwork()
         {
             NetworkLayers = new List<NetworkLayer>();
-            epoch = 2000;
+            epoch = 500;
             LearningRate = 0.0005;
         }
 
