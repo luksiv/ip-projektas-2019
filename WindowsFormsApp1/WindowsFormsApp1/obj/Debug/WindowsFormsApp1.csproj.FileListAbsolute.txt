@@ -25,3 +25,12 @@ C:\Users\Lukas\Desktop\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\D
 C:\Users\Lukas\Desktop\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Lukas\Desktop\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
 C:\Users\Lukas\Desktop\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Edvis\Documents\GitHub\ip-projektas-2019\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

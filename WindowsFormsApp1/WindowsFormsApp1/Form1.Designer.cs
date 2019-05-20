@@ -40,33 +40,33 @@
             this.knn_start = new System.Windows.Forms.Button();
             this.bajes_start = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.alNum = new System.Windows.Forms.NumericUpDown();
+            this.caNum = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.baNum = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.kNum = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.riNum = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.siNum = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.mgNum = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.feNum = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.naNum = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.riNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mgNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naNum)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -190,19 +190,31 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Al";
             // 
-            // numericUpDown1
+            // alNum
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(53, 271);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown1.TabIndex = 24;
+            this.alNum.DecimalPlaces = 4;
+            this.alNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.alNum.Location = new System.Drawing.Point(53, 271);
+            this.alNum.Name = "alNum";
+            this.alNum.Size = new System.Drawing.Size(67, 20);
+            this.alNum.TabIndex = 24;
             // 
-            // numericUpDown2
+            // caNum
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(223, 271);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown2.TabIndex = 26;
+            this.caNum.DecimalPlaces = 4;
+            this.caNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.caNum.Location = new System.Drawing.Point(223, 271);
+            this.caNum.Name = "caNum";
+            this.caNum.Size = new System.Drawing.Size(67, 20);
+            this.caNum.TabIndex = 26;
             // 
             // label4
             // 
@@ -213,12 +225,18 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Ca";
             // 
-            // numericUpDown3
+            // baNum
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(223, 297);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown3.TabIndex = 30;
+            this.baNum.DecimalPlaces = 4;
+            this.baNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.baNum.Location = new System.Drawing.Point(223, 297);
+            this.baNum.Name = "baNum";
+            this.baNum.Size = new System.Drawing.Size(67, 20);
+            this.baNum.TabIndex = 30;
             // 
             // label5
             // 
@@ -229,12 +247,18 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Ba";
             // 
-            // numericUpDown4
+            // kNum
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(53, 297);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown4.TabIndex = 28;
+            this.kNum.DecimalPlaces = 4;
+            this.kNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.kNum.Location = new System.Drawing.Point(53, 297);
+            this.kNum.Name = "kNum";
+            this.kNum.Size = new System.Drawing.Size(67, 20);
+            this.kNum.TabIndex = 28;
             // 
             // label6
             // 
@@ -245,12 +269,18 @@
             this.label6.TabIndex = 27;
             this.label6.Text = "K";
             // 
-            // numericUpDown5
+            // riNum
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(223, 323);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown5.TabIndex = 34;
+            this.riNum.DecimalPlaces = 4;
+            this.riNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.riNum.Location = new System.Drawing.Point(223, 323);
+            this.riNum.Name = "riNum";
+            this.riNum.Size = new System.Drawing.Size(67, 20);
+            this.riNum.TabIndex = 34;
             // 
             // label7
             // 
@@ -261,12 +291,18 @@
             this.label7.TabIndex = 33;
             this.label7.Text = "Lūžio rodiklis";
             // 
-            // numericUpDown6
+            // siNum
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(53, 323);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown6.TabIndex = 32;
+            this.siNum.DecimalPlaces = 4;
+            this.siNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.siNum.Location = new System.Drawing.Point(53, 323);
+            this.siNum.Name = "siNum";
+            this.siNum.Size = new System.Drawing.Size(67, 20);
+            this.siNum.TabIndex = 32;
             // 
             // label8
             // 
@@ -277,12 +313,18 @@
             this.label8.TabIndex = 31;
             this.label8.Text = "Si";
             // 
-            // numericUpDown7
+            // mgNum
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(223, 349);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown7.TabIndex = 38;
+            this.mgNum.DecimalPlaces = 4;
+            this.mgNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.mgNum.Location = new System.Drawing.Point(223, 349);
+            this.mgNum.Name = "mgNum";
+            this.mgNum.Size = new System.Drawing.Size(67, 20);
+            this.mgNum.TabIndex = 38;
             // 
             // label9
             // 
@@ -293,12 +335,18 @@
             this.label9.TabIndex = 37;
             this.label9.Text = "Mg";
             // 
-            // numericUpDown8
+            // feNum
             // 
-            this.numericUpDown8.Location = new System.Drawing.Point(53, 349);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown8.TabIndex = 36;
+            this.feNum.DecimalPlaces = 4;
+            this.feNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.feNum.Location = new System.Drawing.Point(53, 349);
+            this.feNum.Name = "feNum";
+            this.feNum.Size = new System.Drawing.Size(67, 20);
+            this.feNum.TabIndex = 36;
             // 
             // label10
             // 
@@ -309,12 +357,18 @@
             this.label10.TabIndex = 35;
             this.label10.Text = "Fe";
             // 
-            // numericUpDown10
+            // naNum
             // 
-            this.numericUpDown10.Location = new System.Drawing.Point(53, 375);
-            this.numericUpDown10.Name = "numericUpDown10";
-            this.numericUpDown10.Size = new System.Drawing.Size(67, 20);
-            this.numericUpDown10.TabIndex = 40;
+            this.naNum.DecimalPlaces = 4;
+            this.naNum.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            196608});
+            this.naNum.Location = new System.Drawing.Point(53, 375);
+            this.naNum.Name = "naNum";
+            this.naNum.Size = new System.Drawing.Size(67, 20);
+            this.naNum.TabIndex = 40;
             // 
             // label12
             // 
@@ -333,6 +387,7 @@
             this.button3.TabIndex = 41;
             this.button3.Text = "Klasifikuoti stiklą";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
@@ -340,23 +395,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 450);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.numericUpDown10);
+            this.Controls.Add(this.naNum);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.numericUpDown7);
+            this.Controls.Add(this.mgNum);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.numericUpDown8);
+            this.Controls.Add(this.feNum);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.numericUpDown5);
+            this.Controls.Add(this.riNum);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown6);
+            this.Controls.Add(this.siNum);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.numericUpDown3);
+            this.Controls.Add(this.baNum);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown4);
+            this.Controls.Add(this.kNum);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.caNum);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.alNum);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.knn_start);
             this.Controls.Add(this.bajes_start);
@@ -371,15 +426,15 @@
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.caNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.riNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.siNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mgNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.naNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,22 +454,22 @@
         private System.Windows.Forms.Button knn_start;
 		private System.Windows.Forms.Button bajes_start;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown alNum;
+        private System.Windows.Forms.NumericUpDown caNum;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown baNum;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown kNum;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown riNum;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown siNum;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown mgNum;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.NumericUpDown feNum;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.NumericUpDown naNum;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
     }

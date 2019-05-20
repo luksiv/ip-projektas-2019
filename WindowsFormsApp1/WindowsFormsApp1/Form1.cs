@@ -323,5 +323,12 @@ namespace WindowsFormsApp1
 			}
 			richTextBox1.AppendText(string.Format("Average accurasy of all segments - {0}%\n", averageAccurasy / NUMBER_OF_SEGMENTS));
 		}
-	}
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Glass newGlass = new Glass(-1, (double)riNum.Value, (double)naNum.Value, (double)mgNum.Value, (double)alNum.Value, (double)siNum.Value, (double)kNum.Value, (double)caNum.Value, (double)baNum.Value, (double)feNum.Value, -1);
+            var neuralOutput = network.GetOutputs(newGlass);
+            output((neuralOutput.IndexOf(neuralOutput.Max()) + 1));
+        }
+    }
 }
