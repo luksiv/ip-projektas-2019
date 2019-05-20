@@ -31,6 +31,7 @@ namespace WindowsFormsApp1
 			network.AddLayer(9);
 			network.AddLayer(7);
 			button2.Enabled = true;
+            button3.Enabled = true;
 		}
         
 
@@ -187,7 +188,7 @@ namespace WindowsFormsApp1
                     if (distantFieldCount <= acceptableDistantItems) outputList.Add(item);
                     else
                     {
-                        output(string.Format("{0}", item.ToString()));
+                        //output(string.Format("{0}", item.ToString()));
                         removedItems++;
                     }
 				}
