@@ -105,6 +105,7 @@ namespace WindowsFormsApp1
 		{
 			GetDataFromWeb dataFromWeb = new GetDataFromWeb();
 			dataList = dataFromWeb.GetGlasses();
+            network.Shuffle(dataList);
 			//dataList.RemoveRange(71,40);
 			//dataList.RemoveRange(0, 40);
 			knn_start.Enabled = true;
