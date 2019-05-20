@@ -176,7 +176,7 @@ namespace WindowsFormsApp1
 			int acceptableDistantItems = 2;
 			int removedItems = 0;
 
-			List<Glass> output = new List<Glass>();
+			List<Glass> outputList = new List<Glass>();
 
 			HashSet<int> groups = new HashSet<int>();
 			foreach (var item in input)
@@ -193,7 +193,7 @@ namespace WindowsFormsApp1
 
 				double so_upper = getUpperBound(groupItems.Select(field => field.sodium).ToList(), k);
 				double so_lower = getLowerBound(groupItems.Select(field => field.sodium).ToList(), k);
-
+                
 				double mg_upper = getUpperBound(groupItems.Select(field => field.magnesium).ToList(), k);
 				double mg_lower = getLowerBound(groupItems.Select(field => field.magnesium).ToList(), k);
 
@@ -227,12 +227,16 @@ namespace WindowsFormsApp1
 					if (ca_lower > item.calcium || ca_upper < item.calcium) distantFieldCount++;
 					if (ba_lower > item.barium || ba_upper < item.barium) distantFieldCount++;
 					if (fe_lower > item.iron || fe_upper < item.iron) distantFieldCount++;
-					if (distantFieldCount <= acceptableDistantItems) output.Add(item);
-					else removedItems++;
+                    if (distantFieldCount <= acceptableDistantItems) outputList.Add(item);
+                    else
+                    {
+                        output(string.Format("{0}", item.ToString()));
+                        removedItems++;
+                    }
 				}
 			}
 			richTextBox1.AppendText(string.Format("Removed {0} items out of {1}\n", removedItems, input.Count));
-			return output;
+			return outputList;
 		}
 
 		private double getUpperBound(List<double> input, int k)

@@ -35,6 +35,12 @@ namespace WindowsFormsApp1.DataFormating
         }
         public Glass() { }
 
+        public override string ToString()
+        {
+            return string.Format("Glass(id: {0, 3}, refractive_index: {1, 5}, so: {2, 4}, mg: {3, 4}, al: {4, 4}, si: {5, 4}, pt: {6, 4}, ca: {7, 4}, ba: {8, 4}, fe:{9, 4}, group: {10})",
+                id, refractive_index, sodium, magnesium, aluminum, silicon, potassium, calcium, barium, iron, group_type);
+        }
+
         public List<double> GetMainValues()
         {
             List<double> values = new List<double>();
