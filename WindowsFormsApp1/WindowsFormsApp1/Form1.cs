@@ -328,7 +328,12 @@ namespace WindowsFormsApp1
         {
             Glass newGlass = new Glass(-1, (double)riNum.Value, (double)naNum.Value, (double)mgNum.Value, (double)alNum.Value, (double)siNum.Value, (double)kNum.Value, (double)caNum.Value, (double)baNum.Value, (double)feNum.Value, -1);
             var neuralOutput = network.GetOutputs(newGlass);
-            output((neuralOutput.IndexOf(neuralOutput.Max()) + 1));
+            output(("[BACK PROPOGATION] Siūloma tipas: " + (neuralOutput.IndexOf(neuralOutput.Max()) + 1)));
+            var knn = new KNearestNeighbor(7, dataList);
+            output(("[K-Nearest-Neighbors] Siūloma tipas: " + knn.classify(newGlass)));
+            BayesClassifier bayes = new BayesClassifier(dataList.Count);
+            bayes.trainClassifier(dataList);
+            output(("[Bayes] Siūloma tipas: " + bayes.test(newGlass)));
         }
     }
 }

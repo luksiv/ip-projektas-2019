@@ -202,6 +202,11 @@
             this.alNum.Name = "alNum";
             this.alNum.Size = new System.Drawing.Size(67, 20);
             this.alNum.TabIndex = 24;
+            this.alNum.Value = new decimal(new int[] {
+            18,
+            0,
+            0,
+            65536});
             // 
             // caNum
             // 
@@ -215,6 +220,11 @@
             this.caNum.Name = "caNum";
             this.caNum.Size = new System.Drawing.Size(67, 20);
             this.caNum.TabIndex = 26;
+            this.caNum.Value = new decimal(new int[] {
+            861,
+            0,
+            0,
+            131072});
             // 
             // label4
             // 
@@ -237,6 +247,11 @@
             this.baNum.Name = "baNum";
             this.baNum.Size = new System.Drawing.Size(67, 20);
             this.baNum.TabIndex = 30;
+            this.baNum.Value = new decimal(new int[] {
+            154,
+            0,
+            0,
+            131072});
             // 
             // label5
             // 
@@ -281,6 +296,11 @@
             this.riNum.Name = "riNum";
             this.riNum.Size = new System.Drawing.Size(67, 20);
             this.riNum.TabIndex = 34;
+            this.riNum.Value = new decimal(new int[] {
+            1518,
+            0,
+            0,
+            196608});
             // 
             // label7
             // 
@@ -303,6 +323,11 @@
             this.siNum.Name = "siNum";
             this.siNum.Size = new System.Drawing.Size(67, 20);
             this.siNum.TabIndex = 32;
+            this.siNum.Value = new decimal(new int[] {
+            7298,
+            0,
+            0,
+            131072});
             // 
             // label8
             // 
@@ -369,6 +394,11 @@
             this.naNum.Name = "naNum";
             this.naNum.Size = new System.Drawing.Size(67, 20);
             this.naNum.TabIndex = 40;
+            this.naNum.Value = new decimal(new int[] {
+            1495,
+            0,
+            0,
+            131072});
             // 
             // label12
             // 
