@@ -32,46 +32,7 @@ namespace WindowsFormsApp1
 			network.AddLayer(7);
 			button2.Enabled = true;
 		}
-
-		public void VisualizeNeuralNetwork()
-		{
-			ClearChart();
-			ChartSetSizes(0f, network.NetworkLayers.Count + 1, 0f, 15f);
-			Series Nodes = new Series("Nodes");
-			Nodes.Color = Color.Salmon;
-			Nodes.ChartType = SeriesChartType.Point;
-			int x = 0;
-			int y = 0;
-			foreach (var layer in network.NetworkLayers)
-			{
-				x++;
-				y = 0;
-				foreach (var node in layer.NetworkNeurons)
-				{
-					y++;
-					Nodes.Points.AddXY(x, y);
-				}
-			}
-			chart1.Series.Add(Nodes);
-		}
-
-		public void ChartSetSizes(float minX, float maxX, float minY, float maxY)
-		{
-			chart1.ChartAreas[0].AxisX.Maximum = maxX;
-			chart1.ChartAreas[0].AxisX.Minimum = minX;
-			chart1.ChartAreas[0].AxisY.Maximum = maxY;
-			chart1.ChartAreas[0].AxisY.Minimum = minY;
-		}
-
-		public void ClearChart()
-		{
-			while (chart1.Series.Count > 0) { chart1.Series.RemoveAt(0); }
-		}
-
-		private void button2_Click(object sender, EventArgs e)
-		{
-			VisualizeNeuralNetwork();
-		}
+        
 
 		private void button10_Click(object sender, EventArgs e)
 		{
@@ -111,8 +72,6 @@ namespace WindowsFormsApp1
 			//dataList.RemoveRange(71,40);
 			//dataList.RemoveRange(0, 40);
 			knn_start.Enabled = true;
-			button7.Enabled = true;
-			button8.Enabled = true;
 			button6.Enabled = true;
 			bajes_start.Enabled = true;
 		}
@@ -165,9 +124,7 @@ namespace WindowsFormsApp1
 				richTextBox1.AppendText(string.Format("Correct guesses: {0, 3} ; Total guesses: {1, 3} ; Accuracy: {2, 4}%\n", correctGuesses, guessCounter, accuracy));
 			}
 			richTextBox1.AppendText(string.Format("Average accurasy of all segments - {0}%\n", averageAccurasy / NUMBER_OF_SEGMENTS));
-
-			button5.Enabled = true;
-			button4.Enabled = true;
+            
 		}
 
 		private List<Glass> clearDistantValuesFromList(List<Glass> input)
