@@ -48,6 +48,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.knn_start = new System.Windows.Forms.Button();
+			this.bajes_start = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +89,7 @@
             // button4
             // 
             this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(544, 290);
+            this.button4.Location = new System.Drawing.Point(544, 320);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(275, 23);
             this.button4.TabIndex = 5;
@@ -98,7 +99,7 @@
             // button5
             // 
             this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(544, 261);
+            this.button5.Location = new System.Drawing.Point(544, 291);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(275, 23);
             this.button5.TabIndex = 6;
@@ -226,13 +227,25 @@
             this.knn_start.Text = "kNN";
             this.knn_start.UseVisualStyleBackColor = true;
             this.knn_start.Click += new System.EventHandler(this.Knn_start_Click);
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			//
+			// bayes_start
+			//
+			this.bajes_start.Enabled = false;
+			this.bajes_start.Location = new System.Drawing.Point(544, 261);
+			this.bajes_start.Name = "bayes_start";
+			this.bajes_start.Size = new System.Drawing.Size(275, 23);
+			this.bajes_start.TabIndex = 22;
+			this.bajes_start.Text = "Bajeso algoritmas";
+			this.bajes_start.UseVisualStyleBackColor = true;
+			this.bajes_start.Click += new System.EventHandler(this.bajes_start_Click);
+			//
+			// Form1
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 450);
             this.Controls.Add(this.knn_start);
+			this.Controls.Add(this.bajes_start);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -276,6 +289,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button knn_start;
-    }
+		private System.Windows.Forms.Button bajes_start;
+	}
 }
 
