@@ -105,6 +105,8 @@ namespace WindowsFormsApp1
 		{
 			GetDataFromWeb dataFromWeb = new GetDataFromWeb();
 			dataList = dataFromWeb.GetGlasses();
+            var rnd = new Random();
+            dataList = dataList.OrderBy(x => rnd.NextDouble()).ToList();
             network.Shuffle(dataList);
 			//dataList.RemoveRange(71,40);
 			//dataList.RemoveRange(0, 40);

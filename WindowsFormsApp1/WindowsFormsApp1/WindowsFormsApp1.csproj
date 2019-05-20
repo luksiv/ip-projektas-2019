@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bayes\BayesClassifier.cs" />
+    <Compile Include="Bayes\GlassTypes.cs" />
     <Compile Include="DataFormating\GetDataFromWeb.cs" />
     <Compile Include="DataFormating\Glass.cs" />
     <Compile Include="Form1.cs">
