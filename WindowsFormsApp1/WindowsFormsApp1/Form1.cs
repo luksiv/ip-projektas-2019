@@ -75,35 +75,36 @@ namespace WindowsFormsApp1
         private void button10_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
-            for(int  i = 0; i < 9; i++)
-            {
-                double sum = 0;
-                double max = 0;
-                double min = 1000000;
-                foreach(var gl in dataList)
-                {
-                    if(gl.GetMainValues()[i] >= max)
-                    {
-                        max = gl.GetMainValues()[i];
-                    }
-                    if (gl.GetMainValues()[i] <= min)
-                    {
-                        min = gl.GetMainValues()[i];
-                    }
-                    sum += gl.GetMainValues()[i];
-                }
-                double average = sum / dataList.Count;
-                foreach(var gl in dataList)
-                {
-                    gl.SetMainValues(i,(gl.GetMainValues()[i] - average) / (max - min));
-                }
-            }
+            //for(int  i = 0; i < 9; i++)
+            //{
+            //    double sum = 0;
+            //    double max = 0;
+            //    double min = 1000000;
+            //    foreach(var gl in dataList)
+            //    {
+            //        if(gl.GetMainValues()[i] >= max)
+            //        {
+            //            max = gl.GetMainValues()[i];
+            //        }
+            //        if (gl.GetMainValues()[i] <= min)
+            //        {
+            //            min = gl.GetMainValues()[i];
+            //        }
+            //        sum += gl.GetMainValues()[i];
+            //    }
+            //    double average = sum / dataList.Count;
+            //    foreach(var gl in dataList)
+            //    {
+            //        gl.SetMainValues(i,(gl.GetMainValues()[i] - average) / (max - min));
+            //    }
+            //}
         }
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             GetDataFromWeb dataFromWeb = new GetDataFromWeb();
             dataList = dataFromWeb.GetGlasses();
+            network.Shuffle(dataList);
             //dataList.RemoveRange(71,40);
             //dataList.RemoveRange(0, 40);
             knn_start.Enabled = true;
@@ -113,7 +114,7 @@ namespace WindowsFormsApp1
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {
+        {            
 			double averageAccurasy = 0;
             List<Glass> glasses = new List<Glass>();
             if (radioButton1.Checked)
